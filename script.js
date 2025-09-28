@@ -76,7 +76,7 @@ const playlists = [
         description: "A collection of chart-topping hits.",
         cover: "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da842fea502fc4b5c1343e8e5dd4",
         songs: [
-            { title: "P-Pop Culture", file: "P-Pop Culture - Karan Aujla (Mr-Punjab.Com).mp3" },
+            
             { title: "Lock", file: "Lock_1.mp3" },
             { title: "Take Notes", file: "Take_Notes_1.mp3" },
             { title: "Neal", file: "Neal_1.mp3" }
