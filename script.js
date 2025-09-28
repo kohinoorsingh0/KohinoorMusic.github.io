@@ -37,7 +37,7 @@ const playlists = [
         songs: [
             { title: "Lover", file: "Lover - Diljit Dosanjh (Mr-Punjab.Com).mp3" },
             { title: "No Love", file: "No Love - Shubh (Mr-Punjab.Com).mp3" },
-            { title: "For A Reason", file: "/For A Reason - Karan Aujla (Mr-Punjab.Com).mp3" },
+            { title: "For A Reason", file: "For A Reason - Karan Aujla (Mr-Punjab.Com).mp3" },
             { title: "0008", file: "0008_1.mp3" }
         ]
     },
@@ -87,7 +87,7 @@ const playlists = [
         description: "What's hot in the Punjabi scene right now.",
         cover: "https://i.scdn.co/image/ab67706f00000002009dcc30f0ce309276258332",
         songs: [
-            { title: "0008", file: "songs/0008_1.mp3" },
+            { title: "0008", file: "0008_1.mp3" },
             { title: "No Love", file: "No Love - Shubh (Mr-Punjab.Com).mp3" },
             { title: "For A Reason", file: "For A Reason - Karan Aujla (Mr-Punjab.Com).mp3" },
             { title: "Balenci", file: "Balenci - Shubh (Mr-Punjab.Com).mp3" }
