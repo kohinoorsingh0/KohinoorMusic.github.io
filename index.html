@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noorify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <div class="left"> <img class="close invert" src="close.svg" alt="">
+            <div class="home rounded bg-grey m1 p1">
+                <div class="logo invert logo-text"> <img src="logo.svg" alt="Music Mafia Logo">
+                    <h2 class="invert">Kohinoor</h2>
+                </div>
+                <ul>
+                    <li class="logo-text"> <img class="invert" src="home.svg" alt="Home">
+                        <h2>Home</h2>
+                    </li>
+                    <li class="logo-text"> <img class="invert" src="search.svg" alt="Search">
+                        <h2>Search</h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="library rounded bg-grey m1 p1">
+                <div class="heading"> <img class="invert" src="library.svg" alt="Library">
+                    <h2>Songs</h2>
+                </div>
+                <div class="songlist">
+                    <ul> </ul>
+                </div>
+                <div class="footer">
+                    <div><a href=""><span>Legal</span></a></div>
+                    <div><a href=""><span>Privacy Center</span></a></div>
+                    <div><a href=""><span>Privacy Policy</span></a></div>
+                    <div><a href=""><span>Cookies</span></a></div>
+                    <div><a href=""><span>About Ads</span></a></div>
+                    <div><a href=""><span>Accessibility</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="right rounded bg-grey">
+            <div class="header">
+                <div class="nav"> <img class="invert hamburger" src="hamburger.svg" alt=""> </div>
+                <div class="buttons"> <button class="loginbtn">Log in</button> <button class="signupbtn">Sign
+                        Up</button> </div>
+            </div>
+            <div class="spotifyplaylists">
+                <h1>Kohinoor Playlists</h1>
+                <div class="cardcontainer">
+                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="playbar">
+        <div class="seekbar">
+            <div class="circle"></div>
+        </div>
+        <div class="abovebar">
+            <div class="songinfo invert" id="songinfo"> </div>
+            <div class="songbuttons"> <img class="invert" id="previous" src="previous.svg" alt="Previous"> <img
+                    class="invert" id="play" src="play.svg" alt="Play"> <img class="invert" id="next" src="next.svg"
+                    alt="Next"> </div>
+                    
+            <div class="songtime invert" id="songtime">
+
+            </div>
+            <div class="volume invert">
+                <img id="volumeBtn" src="volume.svg" alt="Volume">
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
