@@ -9,6 +9,7 @@ let currentSongIndex = 0;
 
 // This is our new "database" of playlists.
 // It replaces the need for the old getSongs() function.
+// FINAL CORRECTED DATABASE - USE THIS ONE
 const playlists = [
     {
         name: "Punjabi Pump",
@@ -17,7 +18,7 @@ const playlists = [
         songs: [
             { title: "Brown Munde", file: "Brown Munde-(Mr-Jat.in).mp3" },
             { title: "Watch Out", file: "Watch_Out_1.mp3" },
-            { title: "Racks On Racks", file: "Racks_On_Racks_1.mp3" }
+            { title: "Racks On Racks", file: "Racks On Racks 1.mp3" } 
         ]
     },
     {
@@ -26,7 +27,6 @@ const playlists = [
         cover: "https://i.scdn.co/image/ab67706f000000025ecf3107b2db0060544b1cf4",
         songs: [
             { title: "My Prime", file: "My_Prime.mp3" },
-            
             { title: "7.7 Magnitude", file: "7.7 Magnitude - Karan Aujla (Mr-Punjab.Com).mp3" }
         ]
     },
@@ -38,7 +38,7 @@ const playlists = [
             { title: "Lover", file: "Lover - Diljit Dosanjh (Mr-Punjab.Com).mp3" },
             { title: "No Love", file: "No Love - Shubh (Mr-Punjab.Com).mp3" },
             { title: "For A Reason", file: "For A Reason - Karan Aujla (Mr-Punjab.Com).mp3" },
-            { title: "0008", file: "songs/0008_1.mp3" }
+            { title: "0008", file: "0008_1.mp3" }
         ]
     },
     {
@@ -47,7 +47,7 @@ const playlists = [
         cover: "https://mosaic.scdn.co/300/ab67616d00001e0223e38e647970109a73eec1f4ab67616d00001e029e53b8179f96628d184aa70eab67616d00001e02aecb98c5f918229aba7d6c7aab67616d00001e02b2d7acda99464fbc9775f89d",
         songs: [
             { title: "Lover", file: "Lover - Diljit Dosanjh (Mr-Punjab.Com).mp3" },
-            { title: "Regret", file: "Regret_1.mp3" },
+            { title: "Regret", file: "Regret 1.mp3" }, 
             { title: "No Love", file: "No Love - Shubh (Mr-Punjab.Com).mp3" }
         ]
     },
@@ -67,7 +67,7 @@ const playlists = [
         cover: "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84db81170d809c609aaca74c95",
         songs: [
             { title: "Mf Gabhru", file: "Mf Gabhru - Karan Aujla (Mr-Punjab.Com).mp3" },
-            { title: "Sit Down Son", file: "Sit_Down_Son_1.mp3" },
+            { title: "Sit Down Son", file: "Sit Down Son 1.mp3" }, 
             { title: "Jadd V Julm", file: "Jadd V Julm.mp3" }
         ]
     },
@@ -76,10 +76,10 @@ const playlists = [
         description: "A collection of chart-topping hits.",
         cover: "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da842fea502fc4b5c1343e8e5dd4",
         songs: [
-            { title: "P-Pop Culture", file: "songs/P-Pop Culture - Karan Aujla (Mr-Punjab.Com).mp3" },
-            { title: "Lock", file: "Lock_1.mp3" },
-            { title: "Take Notes", file: "Take_Notes_1.mp3" },
-            { title: "Neal", file: "Neal_1.mp3" }
+            { title: "P-Pop Culture", file: "P-Pop+Culture+-+Karan+Aujla+(Mr-Punjab.Com).mp3" },
+            { title: "Lock", file: "Lock 1.mp3" }, 
+            { title: "Take Notes", file: "Take Notes 1.mp3" },
+            { title: "Neal", file: "Neal 1.mp3" }
         ]
     },
     {
@@ -100,7 +100,7 @@ const playlists = [
         songs: [
             { title: "Watch Out", file: "Watch_Out_1.mp3" },
             { title: "Jadd V Julm", file: "Jadd V Julm.mp3" },
-            { title: "Neal", file: "Neal_1.mp3" }
+            { title: "Neal", file: "Neal 1.mp3" }
         ]
     }
 ];
