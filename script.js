@@ -15,9 +15,9 @@ const playlists = [
         description: "High-energy tracks to get you going.",
         cover: "https://i.scdn.co/image/ab67706f00000002d5d2003959d642758be307d6",
         songs: [
-            { title: "Brown Munde", file: "songs/Brown Munde-(Mr-Jat.in).mp3" },
-            { title: "Watch Out", file: "songs/Watch_Out_1.mp3" },
-            { title: "Racks On Racks", file: "songs/Racks_On_Racks_1.mp3" }
+            { title: "Brown Munde", file: "Brown Munde-(Mr-Jat.in).mp3" },
+            { title: "Watch Out", file: "Watch_Out_1.mp3" },
+            { title: "Racks On Racks", file: "Racks_On_Racks_1.mp3" }
         ]
     },
     {
