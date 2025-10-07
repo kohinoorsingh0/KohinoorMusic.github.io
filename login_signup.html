@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kohinoor — Sign in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#121212; --card:#1e1e1e; --accent:#1db954; --muted:#b3b3b3; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:420px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,#0f0f0f 0%, #0b0b0b 60%); color:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      display:flex; align-items:center; justify-content:center; padding:32px;
+    }
+
+    /* Layout */
+    .container{display:flex; gap:48px; align-items:center; max-width:1100px; width:100%;}
+    .left{
+      flex:1; display:flex; align-items:center; justify-content:center;
+    }
+    .card{
+      width:100%; max-width:var(--maxw); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:28px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Logo */
+    .logo{display:flex; gap:12px; align-items:center; margin-bottom:18px}
+    .logo .mark{width:48px; height:48px; display:grid; place-items:center; background:linear-gradient(180deg,var(--accent), #10b04a); border-radius:10px; box-shadow: 0 6px 18px rgba(29,185,84,0.12)}
+    .logo h1{font-size:18px; margin:0; letter-spacing:0.2px}
+    .logo p{margin:0; font-size:12px; color:var(--muted)}
+
+    /* Form */
+    form{display:grid; gap:12px}
+    label{font-size:13px; color:var(--muted)}
+    input[type="email"], input[type="password"]{
+      width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); color:#fff; font-size:15px;
+    }
+    .field{display:flex; flex-direction:column; gap:6px}
+    .row{display:flex; align-items:center; justify-content:space-between}
+    .actions{display:flex; gap:12px; margin-top:6px}
+    .btn{
+      padding:12px 16px; border-radius:10px; background:var(--accent); color:#07160a; font-weight:600; border:none; cursor:pointer; flex:1; font-size:15px;
+    }
+    .btn.secondary{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04); flex:0; padding:10px 14px}
+
+    .helper{font-size:13px; color:var(--muted)}
+    .checkbox{display:flex; gap:8px; align-items:center}
+
+    /* Right side info */
+    .right{flex:1; display:flex; align-items:center; justify-content:center}
+    .promo{max-width:420px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:26px; border-radius:var(--radius); border:1px solid rgba(255,255,255,0.03)}
+    .promo h2{margin:0 0 10px 0}
+    .features{display:grid; gap:10px; margin-top:12px}
+    .feature{display:flex; gap:12px; align-items:flex-start}
+    .dot{width:36px; height:36px; border-radius:10px; background:var(--glass); display:grid; place-items:center; color:var(--muted); font-weight:600}
+
+    /* small */
+    .small{font-size:13px; color:var(--muted)}
+    .error{color:#ff6b6b; font-size:13px}
+    .success{color:#53d68a; font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .container{flex-direction:column; align-items:stretch}
+      .left, .right{justify-content:center}
+    }
+
+    /* subtle focus */
+    input:focus{outline:2px solid rgba(29,185,84,0.14); border-color:rgba(29,185,84,0.22)}
+
+    .showpass{cursor:pointer; font-size:13px; color:var(--muted)}
+    .footer{margin-top:12px; font-size:13px; color:var(--muted); text-align:center}
+
+    /* loader */
+    .loader{width:18px; height:18px; border-radius:50%; border:2px solid rgba(255,255,255,0.08); border-top-color: #fff; animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* --- NEW STYLES --- */
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--muted);
+      margin: 16px 0;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      gap: 12px;
+    }
+    .divider hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn.google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: white;
+      color: #1f1f1f;
+      border: 1px solid rgba(255,255,255,0.1);
+      width: 100%;
+      transition: background 0.2s ease;
+    }
+    .btn.google:hover {
+      background: #f0f0f0;
+    }
+    .btn.google svg {
+      width: 18px;
+      height: 18px;
+    }
+    /* --- END NEW STYLES --- */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="card" role="main" aria-labelledby="signinTitle">
+        <div class="logo">
+          <div class="mark" aria-hidden="true">
+             <img src="logo.svg" alt="">
+          </div>
+          <div>
+            <h1 id="signinTitle">Sign in to Kohinoor</h1>
+            <p>Millions of songs.</p>
+          </div>
+        </div>
+
+        <form id="loginForm" autocomplete="on" novalidate>
+          <div class="field">
+            <label for="email">Email or username</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required aria-required="true">
+            <div id="emailErr" class="error" role="alert" style="display:none"></div>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div style="display:flex; gap:8px; align-items:center">
+              <input id="password" name="password" type="password" placeholder="Enter your password" required aria-required="true">
+              <button type="button" id="togglePass" class="showpass" aria-pressed="false">Show</button>
+            </div>
+            <div id="pwErr" class="error" role="alert" style="display:none"></div>
+          </div>
+
+          <div class="row" style="align-items:center">
+            <label class="checkbox"><input id="remember" type="checkbox"> <span class="helper">Remember me</span></label>
+            <a href="#" id="forgot" class="small">Forgot password?</a>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn" id="signinBtn">Log in</button>
+            <button type="button" class="btn secondary" id="demoBtn">Demo</button>
+          </div>
+
+          <div class="divider">
+            <hr><span>OR</span><hr>
+          </div>
+
+          <button type="button" class="btn google" id="googleBtn">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+              <path fill="none" d="M0 0h48v48H0z"></path>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+          <div class="footer small">Don't have an account? <a href="#" id="signupLink">Sign up free</a></div>
+          <div id="msg" style="margin-top:10px"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="promo">
+        <h2>Why sign in?</h2>
+        <p class="small">Enjoy personalised recommendations, create playlists and listen across devices. </p>
+        <div class="features">
+          <div class="feature"><div class="dot">1</div><div><b>Personalized</b><div class="small">Get suggestions based on what you like.</div></div></div>
+          <div class="feature"><div class="dot">2</div><div><b>Offline</b><div class="small">Save tracks for offline listening.</div></div></div>
+          <div class="feature"><div class="dot">3</div><div><b>Cross-device</b><div class="small">Start on mobile, continue on desktop.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Small demo logic — no backend. Save to localStorage when "logging in".
+    const form = document.getElementById('loginForm');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const msg = document.getElementById('msg');
+    const emailErr = document.getElementById('emailErr');
+    const pwErr = document.getElementById('pwErr');
+    const togglePass = document.getElementById('togglePass');
+    const remember = document.getElementById('remember');
+    const signinBtn = document.getElementById('signinBtn');
+    const demoBtn = document.getElementById('demoBtn');
+    const googleBtn = document.getElementById('googleBtn'); // <-- NEW: Get Google button
+
+    // Pre-fill if saved
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('demo_user');
+      if (saved) {
+        const u = JSON.parse(saved);
+        email.value = u.email || '';
+        if(u.remember) remember.checked = true;
+      }
+    });
+
+    togglePass.addEventListener('click', () => {
+      const showing = password.type === 'text';
+      password.type = showing ? 'password' : 'text';
+      togglePass.textContent = showing ? 'Show' : 'Hide';
+      togglePass.setAttribute('aria-pressed', String(!showing));
+    });
+
+    function validEmail(v){
+      // simple email test that accepts usernames too (contains @ or plain word)
+      return /(^[^@\s]+@[^@\s]+\.[^@\s]+$)/.test(v) || /^[A-Za-z0-9._%+-]{3,}$/.test(v);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      emailErr.style.display='none'; pwErr.style.display='none'; msg.textContent='';
+
+      const em = email.value.trim();
+      const pw = password.value;
+      let ok=true;
+      if(!em || !validEmail(em)){
+        emailErr.style.display='block'; emailErr.textContent='Please enter a valid email or username.'; ok=false;
+      }
+      if(!pw || pw.length < 6){
+        pwErr.style.display='block'; pwErr.textContent='Password must be at least 6 characters.'; ok=false;
+      }
+      if(!ok) return;
+
+      // simulate network
+      signinBtn.disabled = true; signinBtn.innerHTML = '<span class="loader" aria-hidden="true"></span>';
+      setTimeout(() => {
+        signinBtn.disabled = false; signinBtn.textContent = 'Log in';
+        // fake check: if password is "password123" or "demo" accept
+        if(pw === 'password123' || pw === 'demo'){
+          msg.innerHTML = '<div class="success">Logged in successfully — welcome back!</div>';
+          // store demo user
+          localStorage.setItem('demo_user', JSON.stringify({email:em, remember: remember.checked}));
+          // show small success then "redirect" to a fake homepage inside same page
+          setTimeout(()=>showHome(em),700);
+        } else {
+          msg.innerHTML = '<div class="error">Incorrect credentials. Try the demo button or use password: <b>demo</b></div>';
+        }
+      }, 900);
+    });
+
+    demoBtn.addEventListener('click', ()=>{
+      // fill demo creds
+      email.value = 'demo@local'; password.value = 'demo'; remember.checked = true;
+      // auto submit
+      form.dispatchEvent(new Event('submit', {bubbles:true,cancelable:true}));
+    });
+    
+    // --- NEW SCRIPT LOGIC ---
+    googleBtn.addEventListener('click', () => {
+        // Simulate a successful Google Sign-In
+        msg.innerHTML = '<div class="success">Logged in with Google! Redirecting...</div>';
+        
+        // "Redirect" to the home page after a short delay, passing a generic username
+        setTimeout(() => showHome('Google User'), 900);
+    });
+    // --- END NEW SCRIPT LOGIC ---
+
+    function showHome(user) {
+    // Replace container with a mock home UI (keeps single-file behavior)
+    const container = document.querySelector('.container');
+    container.innerHTML = `
+      <div style="flex:1; display:grid; place-items:center; min-height:240px">
+        <div style="text-align:center; max-width:760px">
+          <h1 style="margin:0 0 8px 0; font-size:28px">Welcome, ${escapeHtml(user)}!</h1>
+          <p style="color:var(--muted); margin:0 0 20px"></p>
+          <div style="display:flex; gap:10px; justify-content:center; margin-bottom:18px">
+            <a href="index.html" class="btn">Go to Your Library</a>
+            <button class="btn secondary" id="logout">Sign out</button>
+          </div>
+          <div style="color:var(--muted)">
+            <small></small>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('logout').addEventListener('click', () => {
+        localStorage.removeItem('demo_user');
+        location.reload();
+    });
+
+    // The old event listener for 'gotoLibrary' has been removed.
+}
+
+    function escapeHtml(unsafe) {
+      return unsafe.replace(/[&<>"']/g, function(m) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#039;"})[m]; });
+    }
+  </script>
+</body>
+</html>
